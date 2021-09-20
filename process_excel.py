@@ -107,3 +107,5 @@ if __name__ == "__main__":
             update_rows(updatefile=sys.argv[3], filepath=sys.argv[1])
     else:
         print(read_excel(sys.argv[1]))
+        
+        
