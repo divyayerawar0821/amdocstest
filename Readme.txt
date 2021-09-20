@@ -1,9 +1,4 @@
 
-
-pip install wheel
-pip install pandas
-pip install openpyxl
-
 The above code works in the command line.
 Usage:
 python process_excel.py <filepath> [operation] [opfile]

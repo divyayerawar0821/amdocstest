@@ -20,7 +20,6 @@ def read_excel(filepath):
     validate_filepath(filepath)
     df = pd.read_excel(filepath)
     df = df.astype(str)
-    df.to_excel(filepath.split(".")[0]+time.strftime("%Y_%m_%d_%H_%M_%S")+".xlsx", index=False)
     return df
 
 def add_rows(addfile, filepath):
@@ -45,7 +44,7 @@ def add_rows(addfile, filepath):
         else:
             employeeTable.loc[len(employeeTable)] = element 
     print(employeeTable)
-    employeeTable.to_excel(filepath, index=False)
+   
 
 def delete_rows(delfile, filepath):
     """
@@ -67,7 +66,7 @@ def delete_rows(delfile, filepath):
         else:
             print("DELETE ROWS FAILED !! /nEmployee Id : {} doest not exists !!".format(i))
     print(employeeTable)
-    employeeTable.to_excel(filepath, index=False)
+    
     
 def update_rows(updatefile, filepath):
     """
@@ -94,7 +93,7 @@ def update_rows(updatefile, filepath):
             if "Year of Joining" in element.keys():
                 employeeTable.at[employeeTable[employeeTable["Employee Id"] == element["Employee Id"]].index,"Year of Joining"] = element["Year of Joining"]
     print(employeeTable)
-    employeeTable.to_excel(filepath, index=False)
+    
                 
 if __name__ == "__main__":
     if not os.path.exists(sys.argv[1]):
